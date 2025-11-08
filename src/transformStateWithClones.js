@@ -25,6 +25,8 @@ function transformStateWithClones(state, actions) {
           delete currentState[key];
         }
         break;
+      default:
+        throw new Error('incorrect action type');
     }
     statesHistory.push({ ...currentState });
   });
